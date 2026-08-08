@@ -8,14 +8,30 @@
 import { prisma } from "@/lib/prisma";
 import { getStoreStatus, type OpeningHourDTO } from "@/lib/hours";
 
-/** Config de analytics para o layout — só o que o navegador precisa. */
+/**
+ * Config de analytics para o layout raiz — só o que o navegador precisa.
+ *
+ * Tolerante a falha DE PROPÓSITO. Como o layout raiz embrulha toda página,
+ * inclusive as estáticas (`/_not-found`, `/admin/login`), uma consulta que
+ * estoure aqui derruba o build inteiro — foi exatamente o que aconteceu no
+ * primeiro deploy, com o banco sem variável de ambiente.
+ *
+ * Analytics é decorativo: se o banco não responder, o site sobe sem medição
+ * em vez de não subir.
+ */
 export async function getAnalyticsConfig() {
-  const settings = await getSettings();
-  return {
-    gtmContainerId: settings.gtmContainerId,
-    ga4MeasurementId: settings.ga4MeasurementId,
-    metaPixelId: settings.metaPixelId,
-  };
+  const EMPTY = { gtmContainerId: null, ga4MeasurementId: null, metaPixelId: null };
+
+  try {
+    const settings = await getSettings();
+    return {
+      gtmContainerId: settings.gtmContainerId,
+      ga4MeasurementId: settings.ga4MeasurementId,
+      metaPixelId: settings.metaPixelId,
+    };
+  } catch {
+    return EMPTY;
+  }
 }
 
 /** Configurações da loja. O upsert garante que nunca retorna null. */

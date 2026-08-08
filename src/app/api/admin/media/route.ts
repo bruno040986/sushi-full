@@ -6,6 +6,23 @@ import { slugify } from "@/lib/slug";
 
 export const dynamic = "force-dynamic";
 
+/**
+ * Token de escrita do Blob.
+ *
+ * O nome da variável depende do prefixo escolhido ao conectar o store na
+ * Vercel: com o prefixo padrão ela nasce `BLOB_READ_WRITE_TOKEN`; se alguém
+ * digitar um prefixo, a Vercel concatena e vira `<PREFIXO>_READ_WRITE_TOKEN`.
+ * Aceitar as duas formas evita upload quebrado por causa de um campo de
+ * formulário preenchido diferente.
+ */
+function blobToken(): string | undefined {
+  return (
+    process.env.BLOB_READ_WRITE_TOKEN ||
+    process.env.BLOB_READ_WRITE_TOKEN_READ_WRITE_TOKEN ||
+    undefined
+  );
+}
+
 const ALLOWED_TYPES = ["image/webp", "image/jpeg", "image/png"];
 /**
  * 4 MB. O ImageField já reduz a foto para ~1200px WebP no navegador antes de
@@ -30,11 +47,12 @@ export async function POST(request: Request) {
   const denied = await requireAdmin();
   if (denied) return denied;
 
-  if (!process.env.BLOB_READ_WRITE_TOKEN) {
+  const token = blobToken();
+  if (!token) {
     return NextResponse.json(
       {
         error:
-          "Upload não configurado. Defina BLOB_READ_WRITE_TOKEN no ambiente (Vercel → Storage → Blob).",
+          "Upload não configurado. Conecte um Blob store ao projeto na Vercel (Storage → Blob).",
       },
       { status: 503 },
     );
@@ -67,6 +85,7 @@ export async function POST(request: Request) {
     // Evita que dois uploads com o mesmo nome se sobrescrevam
     addRandomSuffix: true,
     contentType: file.type,
+    token,
   });
 
   const asset = await prisma.mediaAsset.create({
@@ -101,7 +120,7 @@ export async function DELETE(request: Request) {
     );
   }
 
-  await del(url);
+  await del(url, { token: blobToken() });
   await prisma.mediaAsset.delete({ where: { url } });
 
   return NextResponse.json({ ok: true });
