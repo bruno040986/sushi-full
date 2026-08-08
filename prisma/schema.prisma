@@ -1,0 +1,378 @@
+// SushiFull — schema do cardápio, configurações da loja e pedidos.
+//
+// Convenções:
+//  - Todo valor monetário é Int em CENTAVOS. Float acumula erro no frete/troco
+//    e Decimal do Prisma não serializa de Server Component para Client Component.
+//  - Horário é Int em minutos desde a meia-noite. closesAtMin > 1440 significa
+//    "fecha no dia seguinte" (ex: 1470 = 00h30).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // pooler (6543)
+  directUrl = env("DIRECT_URL") // conexão direta (5432), usada pelo migrate
+}
+
+enum Role {
+  ADMIN
+}
+
+enum DeliveryFeeMode {
+  FIXED
+  BY_NEIGHBORHOOD
+}
+
+enum Fulfillment {
+  DELIVERY
+  PICKUP
+}
+
+enum OrderStatus {
+  AWAITING_CONFIRMATION // gravado pelo site; o dono ainda não viu a mensagem
+  CONFIRMED
+  PREPARING
+  OUT_FOR_DELIVERY
+  READY_FOR_PICKUP
+  DELIVERED
+  CANCELED
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(ADMIN)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── Cardápio ────────────────────────────────────────────────────────────────
+
+model Category {
+  id   String @id @default(uuid())
+  name String @unique
+  slug String @unique
+  /// Foto de reserva: itens sem foto própria exibem esta, em vez de card vazio
+  imageUrl  String?
+  active    Boolean   @default(true)
+  sortOrder Int       @default(0)
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([active, sortOrder])
+}
+
+model Product {
+  id   String @id @default(uuid())
+  name String
+  /// Chave estável do seed — permite rodar `db:seed` várias vezes sem duplicar
+  slug String @unique
+  /// Código do cardápio impresso (0048, 0102…). A cozinha trabalha por código.
+  code String?
+
+  /// Aparece no card do cardápio
+  shortDescription String? @db.VarChar(140)
+  /// Aparece no modal de detalhe
+  longDescription  String?
+
+  priceCents Int
+  imageUrl   String?
+  active     Boolean @default(true)
+  /// Entra no carrossel de destaques da home
+  featured   Boolean @default(false)
+  sortOrder  Int     @default(0)
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+
+  orderItems OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([categoryId, active, sortOrder])
+  @@index([featured, active])
+}
+
+model PaymentMethod {
+  id        String  @id @default(uuid())
+  name      String  @unique
+  /// Dinheiro: revela o campo "troco para" no checkout
+  isCash    Boolean @default(false)
+  active    Boolean @default(true)
+  sortOrder Int     @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([active, sortOrder])
+}
+
+// ─── Configuração da loja ────────────────────────────────────────────────────
+
+/// Linha única (id fixo "singleton"). Tudo que o dono edita em /admin/configuracoes.
+model StoreSettings {
+  id String @id @default("singleton")
+
+  // Identidade
+  storeName  String  @default("SushiFull")
+  tagline    String  @default("Sabor que completa")
+  logoUrl    String  @default("/brand/logo.png")
+  aboutTitle String  @default("Sobre o SushiFull")
+  aboutText  String? @db.Text
+
+  // Dados jurídicos (rodapé e páginas legais). Nulo = bloco some do site.
+  legalName         String?
+  tradeName         String?
+  cnpj              String?
+  stateRegistration String?
+
+  // Contato
+  whatsappNumber  String  @default("5561993292359") // só dígitos, E.164 sem "+"
+  whatsappDisplay String  @default("(61) 99329-2359")
+  phoneLandline   String?
+  secondaryPhone  String?
+  contactEmail    String?
+
+  // Redes
+  instagramUrl    String? @default("https://instagram.com/sushifullvalparaiso")
+  instagramHandle String? @default("@sushifullvalparaiso")
+  facebookUrl     String?
+  tiktokUrl       String?
+  ifoodUrl        String?
+  linktreeUrl     String? @default("https://linktr.ee/sushifull")
+
+  // Localização
+  addressLine   String  @default("Q 33, Lote 22")
+  number        String?
+  complement    String?
+  neighborhood  String  @default("Parque Esplanada III")
+  city          String  @default("Valparaíso de Goiás")
+  state         String  @default("GO")
+  zipCode       String?
+  latitude      Float?
+  longitude     Float?
+  googleMapsUrl String?
+  wazeUrl       String?
+
+  // Operação
+  timezone      String  @default("America/Sao_Paulo")
+  /// Kill switch manual: derruba o botão de pedido mesmo dentro do horário
+  ordersEnabled Boolean @default(true)
+  closedMessage String  @default("Estamos fechados no momento. Você pode montar seu pedido e enviar quando abrirmos.")
+
+  // Entrega
+  deliveryEnabled            Boolean         @default(true)
+  pickupEnabled              Boolean         @default(true)
+  deliveryFeeMode            DeliveryFeeMode @default(FIXED)
+  fixedDeliveryFeeCents      Int             @default(500)
+  /// Nulo = não existe frete grátis
+  freeDeliveryThresholdCents Int?
+  /// Nulo = não existe pedido mínimo. Compara com o SUBTOTAL, não com o total.
+  minOrderCents              Int?
+  deliveryEtaMinMinutes      Int             @default(40)
+  deliveryEtaMaxMinutes      Int             @default(70)
+  pickupEtaMinutes           Int             @default(30)
+
+  // SEO
+  metaTitle       String?
+  metaDescription String?
+  ogImageUrl      String?
+
+  // Analytics — cada um carrega só se estiver preenchido
+  gtmContainerId   String? // GTM-XXXXXXX
+  ga4MeasurementId String? // G-XXXXXXXXXX
+  metaPixelId      String? // só dígitos
+
+  updatedAt DateTime @updatedAt
+}
+
+/// Uma linha por dia da semana (0 = domingo, seguindo Date.getDay()).
+model OpeningHour {
+  id          String  @id @default(uuid())
+  weekday     Int
+  closed      Boolean @default(true)
+  opensAtMin  Int     @default(1080) // 18:00
+  closesAtMin Int     @default(1380) // 23:00
+
+  @@unique([weekday])
+}
+
+/// Cidades atendidas. Uma delas fica marcada como padrão e vem pré-selecionada
+/// no checkout. A UF acompanha a cidade — assim não é possível montar um par
+/// inválido como "Valparaíso de Goiás/SP".
+model ServiceCity {
+  id        String  @id @default(uuid())
+  name      String
+  state     String  @db.VarChar(2)
+  isDefault Boolean @default(false)
+  active    Boolean @default(true)
+  sortOrder Int     @default(0)
+
+  zones DeliveryZone[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([name, state])
+  @@index([active, sortOrder])
+}
+
+/// Bairros atendidos, com a regra de frete de cada um.
+model DeliveryZone {
+  id       String @id @default(uuid())
+  name     String
+  feeCents Int
+
+  cityId String
+  city   ServiceCity @relation(fields: [cityId], references: [id], onDelete: Restrict)
+
+  /// Frete sempre grátis neste bairro, qualquer que seja o valor do pedido
+  freeDelivery Boolean @default(false)
+  /// Frete grátis a partir deste valor NESTE bairro. Sobrepõe a regra global.
+  /// Nulo = usa a regra global de StoreSettings.
+  freeDeliveryThresholdCents Int?
+
+  etaMinutes Int?
+  active     Boolean @default(true)
+  sortOrder  Int     @default(0)
+
+  orders Order[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([name, cityId])
+  @@index([active, sortOrder])
+}
+
+/// Vídeos verticais exibidos na seção "Reels" da home.
+model Reel {
+  id        String  @id @default(uuid())
+  title     String
+  videoUrl  String
+  posterUrl String?
+  sortOrder Int     @default(0)
+  active    Boolean @default(true)
+
+  @@index([active, sortOrder])
+}
+
+/// Catálogo do que foi enviado ao Vercel Blob, para a galeria do painel.
+model MediaAsset {
+  id          String   @id @default(uuid())
+  url         String   @unique
+  pathname    String
+  filename    String
+  contentType String
+  sizeBytes   Int
+  createdAt   DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+// ─── Clientes e pedidos ──────────────────────────────────────────────────────
+
+/// Consolidado por telefone. Lido APENAS pelo painel autenticado — nenhuma
+/// rota pública devolve estes dados (evita enumeração de base por telefone).
+model Customer {
+  id    String @id @default(uuid())
+  phone String @unique // só dígitos
+  name  String
+
+  // Último endereço informado, para o painel ter contexto
+  lastStreet       String?
+  lastNumber       String?
+  lastComplement   String?
+  lastNeighborhood String?
+  lastCity         String?
+  lastState        String?
+  lastReference    String?
+
+  ordersCount     Int @default(0)
+  totalSpentCents Int @default(0)
+  /// Reservado para o clube de benefícios — nada incrementa isto ainda
+  loyaltyPoints   Int @default(0)
+
+  firstOrderAt DateTime?
+  lastOrderAt  DateTime?
+  notes        String?
+
+  orders Order[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([lastOrderAt])
+}
+
+model Order {
+  id   String @id @default(uuid())
+  /// Sequencial legível mostrado ao cliente e na mensagem: "#0142"
+  code String @unique
+
+  status      OrderStatus @default(AWAITING_CONFIRMATION)
+  fulfillment Fulfillment
+
+  customerId String?
+  customer   Customer? @relation(fields: [customerId], references: [id], onDelete: SetNull)
+
+  // Snapshot: sobrevive à edição/exclusão do cadastro do cliente
+  customerName  String
+  customerPhone String
+
+  // Entrega (nulo quando é retirada) — snapshot do endereço informado
+  street         String?
+  number         String?
+  complement     String?
+  neighborhood   String?
+  city           String?
+  state          String?
+  reference      String?
+  deliveryZoneId String?
+  deliveryZone   DeliveryZone? @relation(fields: [deliveryZoneId], references: [id], onDelete: SetNull)
+
+  subtotalCents       Int
+  deliveryFeeCents    Int     @default(0)
+  totalCents          Int
+  freeDeliveryApplied Boolean @default(false)
+
+  paymentMethodName String // snapshot
+  changeForCents    Int?
+  changeDueCents    Int?
+
+  notes          String?
+  whatsappSentAt DateTime?
+  confirmedAt    DateTime?
+  canceledReason String?
+
+  items OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status, createdAt])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id      String @id @default(uuid())
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  /// Opcional: permite excluir um produto sem apagar o histórico de vendas
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  nameSnapshot   String
+  unitPriceCents Int
+  quantity       Int
+  lineTotalCents Int
+
+  @@index([orderId])
+}

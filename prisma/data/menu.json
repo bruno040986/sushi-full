@@ -1,0 +1,889 @@
+[
+ {
+  "category": "Combos",
+  "categorySort": 1,
+  "code": "0064",
+  "slug": "combo-1-14-pecas",
+  "name": "Combo 1 — 14 peças",
+  "priceCents": 3000,
+  "shortDescription": "6 sashimis de salmão, 2 niguiris de salmão e 6 hots philadelphia.",
+  "longDescription": "6 sashimis de salmão\n2 niguiris de salmão\n6 hots philadelphia",
+  "image": "/cardapio/combo-sushi-01-1000.webp",
+  "featured": true,
+  "sortOrder": 1
+ },
+ {
+  "category": "Combos",
+  "code": "0065",
+  "slug": "combo-2-24-pecas",
+  "name": "Combo 2 — 24 peças",
+  "priceCents": 4500,
+  "shortDescription": "6 gunkans, 6 niguiris de salmão, 6 sashimis de tilápia e 6 hots philadelphia.",
+  "longDescription": "6 gunkans de salmão\n6 niguiris de salmão\n6 sashimis de tilápia c/ limão\n6 hots philadelphia",
+  "sortOrder": 2
+ },
+ {
+  "category": "Combos",
+  "code": "0066",
+  "slug": "combo-3-28-pecas",
+  "name": "Combo 3 — 28 peças",
+  "priceCents": 4900,
+  "shortDescription": "Sashimis de salmão e tilápia, niguiris, huramaki e hots de salmão.",
+  "longDescription": "6 sashimis de salmão\n6 sashimis de tilápia c/ limão\n4 niguiris de salmão\n6 huramakis philadelphia\n6 hots de salmão",
+  "featured": true,
+  "sortOrder": 3
+ },
+ {
+  "category": "Combos",
+  "code": "0067",
+  "slug": "combo-4-30-pecas",
+  "name": "Combo 4 — 30 peças",
+  "priceCents": 5500,
+  "shortDescription": "Sashimi, hot, huramaki, camarão empanado e isca de tilápia.",
+  "longDescription": "6 sashimis de salmão\n6 hots philadelphia\n6 huramakis philadelphia\n6 camarões empanados\n6 iscas de tilápia",
+  "sortOrder": 4
+ },
+ {
+  "category": "Combos",
+  "code": "0068",
+  "slug": "combo-5-35-pecas",
+  "name": "Combo 5 — 35 peças",
+  "priceCents": 7490,
+  "shortDescription": "10 sashimis, 10 hots, 10 huramakis e 6 camarões empanados.",
+  "longDescription": "10 sashimis de salmão\n10 hots philadelphia\n10 huramakis philadelphia\n6 camarões empanados",
+  "sortOrder": 5
+ },
+ {
+  "category": "Combos",
+  "code": "0070",
+  "slug": "combo-7-38-pecas",
+  "name": "Combo 7 — 38 peças",
+  "priceCents": 7800,
+  "shortDescription": "Hots, sashimi maçaricado, camarão, isca de tilápia, niguiris e hots de sobremesa.",
+  "longDescription": "6 hots philadelphia\n6 sashimis de salmão maçaricado\n6 camarões empanados\n6 iscas de tilápia\n4 niguiris de salmão skin\n4 niguiris de salmão maçaricado\n6 hots de banana com chocolate",
+  "sortOrder": 7
+ },
+ {
+  "category": "Combos",
+  "code": "0072",
+  "slug": "combo-9-28-pecas",
+  "name": "Combo 9 — 28 peças",
+  "priceCents": 7000,
+  "shortDescription": "Niguiris de salmão e camarão, sashimi, jyo maçaricado e hots.",
+  "longDescription": "6 niguiris de salmão\n6 niguiris de camarão\n6 sashimis de salmão\n6 jyos de salmão maçaricado\n10 hots philadelphia",
+  "sortOrder": 9
+ },
+ {
+  "category": "Combos",
+  "code": "0073",
+  "slug": "combo-10-50-pecas",
+  "name": "Combo 10 — 50 peças",
+  "priceCents": 13990,
+  "shortDescription": "Para dividir: 50 peças com sashimi, huramaki, hots, niguiris e camarão.",
+  "longDescription": "10 sashimis de salmão\n10 huramakis de salmão\n10 hots philadelphia\n5 niguiris de salmão skin\n5 niguiris de salmão\n10 camarões empanados",
+  "featured": true,
+  "sortOrder": 10
+ },
+ {
+  "category": "Combos Especiais",
+  "categorySort": 2,
+  "code": "0074",
+  "slug": "combo-11-especial-sushi-full",
+  "name": "Combo 11 — Especial Sushi Full (100 peças)",
+  "priceCents": 21900,
+  "shortDescription": "O maior da casa: 100 peças com gunkan, sashimi, jyo, huramaki, hossomaki e mais.",
+  "longDescription": "6 gunkans de goiabada, cream cheese e calda de morango\n6 gunkans c/ arroz, tartar de salmão, cream cheese e cebolinha\n6 sashimis de salmão\n6 sashimis de anchova negra defumada\n6 jyos s/ arroz de salmão, cream cheese e calda de maracujá\n6 jyos s/ arroz de salmão maçaricado, cream cheese e geleia de pimenta\n10 huramakis philadelphia\n10 hots tradicionais\n10 hossomakis de salmão\n1 uzusukuri de tilápia (10 peças)\n7 camarões empanados\n7 iscas empanadas\n5 niguiris de salmão\n5 niguiris de anchova",
+  "featured": true,
+  "sortOrder": 1
+ },
+ {
+  "category": "Combos Especiais",
+  "code": "0078",
+  "slug": "combo-yane",
+  "name": "Combo Yane",
+  "priceCents": 8290,
+  "shortDescription": "Camarão tempura, sashimis de salmão e tilápia, huramaki, hots e sobremesa.",
+  "longDescription": "5 camarões empanados tempura\n5 sashimis de salmão\n5 sashimis de tilápia e azeite de ervas\n10 huramakis philadelphia\n10 hots philadelphia\n10 hots de banana com nutella",
+  "sortOrder": 2
+ },
+ {
+  "category": "Combos Especiais",
+  "code": "0080",
+  "slug": "combo-sashimis-salmao",
+  "name": "Combo Sashimis Salmão",
+  "priceCents": 8490,
+  "shortDescription": "Niguiris trufados, niguiris maçaricados, hossomaki, huramaki e hots.",
+  "longDescription": "5 niguiris de salmão trufado, flor de sal e limão siciliano\n5 niguiris de salmão maçaricado, tare e raspa de limão taiti\n8 hossomakis de salmão\n8 huramakis philadelphia\n10 hots philadelphia",
+  "sortOrder": 3
+ },
+ {
+  "category": "Combos Especiais",
+  "code": "0082",
+  "slug": "combo-samurai",
+  "name": "Combo Samurai",
+  "priceCents": 5290,
+  "shortDescription": "40 hots: philadelphia, queijo, massa hossomaki e banana com nutella.",
+  "longDescription": "10 hots philadelphia\n10 hots de queijo\n10 hots massa hossomaki de salmão\n10 hots de banana com nutella",
+  "sortOrder": 4
+ },
+ {
+  "category": "Combos Especiais",
+  "code": "0083",
+  "slug": "combo-imperador",
+  "name": "Combo Imperador",
+  "priceCents": 11400,
+  "shortDescription": "45 peças com hots, niguiris, jyos, hossomaki e sashimis de salmão e camarão.",
+  "longDescription": "10 hots philadelphia\n5 niguiris de salmão\n5 jyos de salmão e tartar de salmão\n5 hossomakis de salmão\n5 niguiris de camarão\n5 jyos com cream cheese e calda de maracujá\n5 sashimis de salmão\n5 sashimis de camarão",
+  "featured": true,
+  "sortOrder": 5
+ },
+ {
+  "category": "Combos Especiais",
+  "code": "0085",
+  "slug": "combo-buda",
+  "name": "Combo Buda",
+  "priceCents": 6900,
+  "shortDescription": "25 peças autorais de jyo e niguiri, cada uma com um preparo diferente.",
+  "longDescription": "5 jyos de cream cheese e calda de maracujá\n5 jyos de goiabada, cream cheese e raspa de limão taiti\n5 jyos de salmão/camarão, cream cheese maçaricado, teriyaki e alho poró\n5 jyos de salmão, tartar de salmão, cebolinha e raspa de limão taiti\n5 niguiris de camarão ao contrário, maionese spicy, queijo e mel",
+  "sortOrder": 6
+ },
+ {
+  "category": "Combos Especiais",
+  "code": "0086",
+  "slug": "combo-skim",
+  "name": "Combo Skim",
+  "priceCents": 4400,
+  "shortDescription": "Huramaki de salmão maçaricado com maionese spicy, niguiris skin e hots.",
+  "longDescription": "10 huramakis skin/salmão maçaricado, maionese spicy e cebola crispy\n5 niguiris skin com lâminas de limão, teriyaki e gergelim\n10 hots philadelphia",
+  "sortOrder": 7
+ },
+ {
+  "category": "Combos Especiais",
+  "code": "0087",
+  "slug": "combo-gueixa",
+  "name": "Combo Gueixa",
+  "priceCents": 6800,
+  "shortDescription": "Huramaki, hots, sashimis, batera e jyo com tartar de salmão.",
+  "longDescription": "4 huramakis philadelphia\n4 hots philadelphia\n5 sashimis de salmão\n4 bateras de salmão\n4 jyos de salmão e tartar de salmão",
+  "sortOrder": 8
+ },
+ {
+  "category": "Temaki",
+  "categorySort": 3,
+  "code": "0048",
+  "slug": "temaki-arroz-salmao-cebolinha",
+  "name": "Temaki de salmão e cebolinha",
+  "priceCents": 3199,
+  "shortDescription": "Com arroz, salmão fresco e cebolinha.",
+  "image": "/cardapio/temaki-salmao-1000.webp",
+  "featured": true,
+  "sortOrder": 1
+ },
+ {
+  "category": "Temaki",
+  "code": "0049",
+  "slug": "temaki-arroz-salmao-cebolinha-cream-cheese",
+  "name": "Temaki de salmão, cebolinha e cream cheese",
+  "priceCents": 3399,
+  "shortDescription": "Com arroz, salmão, cebolinha e cream cheese.",
+  "sortOrder": 2
+ },
+ {
+  "category": "Temaki",
+  "code": "0050",
+  "slug": "temaki-arroz-camarao-cebolinha",
+  "name": "Temaki de camarão e cebolinha",
+  "priceCents": 3399,
+  "shortDescription": "Com arroz, camarão e cebolinha.",
+  "sortOrder": 3
+ },
+ {
+  "category": "Temaki",
+  "code": "0051",
+  "slug": "temaki-arroz-camarao-cebolinha-cream-cheese",
+  "name": "Temaki de camarão, cebolinha e cream cheese",
+  "priceCents": 3499,
+  "shortDescription": "Com arroz, camarão, cebolinha e cream cheese.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Temaki",
+  "code": "0052",
+  "slug": "temaki-arroz-camarao-kani-cebolinha",
+  "name": "Temaki de camarão, kani e cebolinha",
+  "priceCents": 3599,
+  "shortDescription": "Com arroz, camarão, kani e cebolinha.",
+  "sortOrder": 5
+ },
+ {
+  "category": "Temaki",
+  "code": "0053",
+  "slug": "temaki-arroz-camarao-kani-cebolinha-cream-cheese",
+  "name": "Temaki de camarão, kani, cebolinha e cream cheese",
+  "priceCents": 3699,
+  "shortDescription": "Com arroz, camarão, kani, cebolinha e cream cheese.",
+  "sortOrder": 6
+ },
+ {
+  "category": "Temaki",
+  "code": "0054",
+  "slug": "temaki-salmao-macaricado-teriyaki",
+  "name": "Temaki de salmão maçaricado",
+  "priceCents": 4799,
+  "shortDescription": "Salmão maçaricado com cream cheese, alho poró, cebolinha e molho teriyaki.",
+  "longDescription": "Com arroz, salmão e cream cheese maçaricado, acompanhado de alho poró, cebolinha e molho teriyaki.",
+  "featured": true,
+  "sortOrder": 7
+ },
+ {
+  "category": "Temaki",
+  "code": "0055",
+  "slug": "temaki-sem-arroz-acrescimo",
+  "name": "Sem arroz (acréscimo)",
+  "priceCents": 500,
+  "shortDescription": "Acréscimo para montar o temaki sem arroz.",
+  "sortOrder": 8
+ },
+ {
+  "category": "Temaki",
+  "code": "0056",
+  "slug": "temaki-hot-acrescimo",
+  "name": "Temaki hot (acréscimo)",
+  "priceCents": 500,
+  "shortDescription": "Acréscimo para servir o temaki na versão hot, empanado.",
+  "sortOrder": 9
+ },
+ {
+  "category": "Temaki",
+  "code": "0057",
+  "slug": "temaki-adicionais",
+  "name": "Adicionais para temaki",
+  "priceCents": 250,
+  "shortDescription": "Pimenta sriracha, alho poró, cebolinha, couve crispy, batata doce crispy, gergelim, wasabi ou gengibre.",
+  "longDescription": "Escolha o adicional na observação do pedido: pimenta sriracha, alho poró, cebolinha, couve crispy, batata doce crispy, gergelim, wasabi ou gengibre.",
+  "sortOrder": 10
+ },
+ {
+  "category": "Huramaki",
+  "categorySort": 4,
+  "code": "0002",
+  "slug": "huramaki-salmao",
+  "name": "Huramaki de salmão",
+  "priceCents": 2200,
+  "shortDescription": "10 unidades com salmão fresco.",
+  "sortOrder": 1,
+  "image": "/cardapio/menu-huramaki-1000.webp"
+ },
+ {
+  "category": "Huramaki",
+  "code": "0003",
+  "slug": "huramaki-salmao-cream-cheese",
+  "name": "Huramaki de salmão com cream cheese",
+  "priceCents": 2400,
+  "shortDescription": "10 unidades de salmão com cream cheese.",
+  "sortOrder": 2
+ },
+ {
+  "category": "Huramaki",
+  "code": "0004",
+  "slug": "huramaki-camarao",
+  "name": "Huramaki de camarão",
+  "priceCents": 2500,
+  "shortDescription": "10 unidades com camarão.",
+  "sortOrder": 3
+ },
+ {
+  "category": "Huramaki",
+  "code": "0005",
+  "slug": "huramaki-camarao-cream-cheese",
+  "name": "Huramaki de camarão com cream cheese",
+  "priceCents": 2700,
+  "shortDescription": "10 unidades de camarão com cream cheese.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Huramaki",
+  "code": "0006",
+  "slug": "huramaki-salmao-skin",
+  "name": "Huramaki de salmão skin",
+  "priceCents": 1800,
+  "shortDescription": "10 unidades com pele de salmão crocante.",
+  "sortOrder": 5
+ },
+ {
+  "category": "Huramaki",
+  "code": "0007",
+  "slug": "huramaki-kani",
+  "name": "Huramaki de kani",
+  "priceCents": 1400,
+  "shortDescription": "10 unidades com kani.",
+  "sortOrder": 6
+ },
+ {
+  "category": "Huramaki",
+  "code": "0008",
+  "slug": "huramaki-kani-cream-cheese",
+  "name": "Huramaki de kani com cream cheese",
+  "priceCents": 1400,
+  "shortDescription": "10 unidades de kani com cream cheese.",
+  "sortOrder": 7
+ },
+ {
+  "category": "Hossomaki",
+  "categorySort": 5,
+  "code": "0009",
+  "slug": "hossomaki-salmao",
+  "name": "Hossomaki de salmão",
+  "priceCents": 2000,
+  "shortDescription": "10 unidades com salmão.",
+  "sortOrder": 1,
+  "image": "/cardapio/menu-hossomaki-1000.webp"
+ },
+ {
+  "category": "Hossomaki",
+  "code": "0010",
+  "slug": "hossomaki-salmao-cream-cheese",
+  "name": "Hossomaki de salmão com cream cheese",
+  "priceCents": 2700,
+  "shortDescription": "10 unidades de salmão com cream cheese.",
+  "sortOrder": 2
+ },
+ {
+  "category": "Hossomaki",
+  "code": "0011",
+  "slug": "hossomaki-camarao",
+  "name": "Hossomaki de camarão",
+  "priceCents": 2500,
+  "shortDescription": "10 unidades com camarão.",
+  "sortOrder": 3
+ },
+ {
+  "category": "Hossomaki",
+  "code": "0013",
+  "slug": "hossomaki-kani",
+  "name": "Hossomaki de kani",
+  "priceCents": 1800,
+  "shortDescription": "10 unidades com kani.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Hossomaki",
+  "code": "0014",
+  "slug": "hossomaki-kani-cream-cheese",
+  "name": "Hossomaki de kani com cream cheese",
+  "priceCents": 2000,
+  "shortDescription": "10 unidades de kani com cream cheese.",
+  "sortOrder": 5
+ },
+ {
+  "category": "Niguiri",
+  "categorySort": 6,
+  "code": "0031",
+  "slug": "niguiri-salmao",
+  "name": "Niguiri de salmão",
+  "priceCents": 2200,
+  "shortDescription": "6 unidades de salmão sobre arroz.",
+  "image": "/cardapio/niguiri-01-1000.webp",
+  "featured": true,
+  "sortOrder": 1
+ },
+ {
+  "category": "Niguiri",
+  "code": "0032",
+  "slug": "niguiri-camarao",
+  "name": "Niguiri de camarão",
+  "priceCents": 2500,
+  "shortDescription": "6 unidades de camarão sobre arroz.",
+  "sortOrder": 2,
+  "image": "/cardapio/menu-niguiri-macaricado-1000.webp"
+ },
+ {
+  "category": "Niguiri",
+  "code": "0033",
+  "slug": "niguiri-tilapia-limao",
+  "name": "Niguiri de tilápia com fatia de limão",
+  "priceCents": 2000,
+  "shortDescription": "6 unidades de tilápia com limão.",
+  "sortOrder": 3
+ },
+ {
+  "category": "Niguiri",
+  "code": "0034",
+  "slug": "niguiri-kani",
+  "name": "Niguiri de kani",
+  "priceCents": 1800,
+  "shortDescription": "6 unidades de kani sobre arroz.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Niguiri",
+  "code": "0035",
+  "slug": "niguiri-salmao-skin-limao",
+  "name": "Niguiri de salmão skin com fatia de limão",
+  "priceCents": 1800,
+  "shortDescription": "6 unidades de pele de salmão crocante com limão.",
+  "image": "/cardapio/niguiri-barriga-salmao-01-1000.webp",
+  "sortOrder": 5
+ },
+ {
+  "category": "Niguiri",
+  "code": "0036",
+  "slug": "niguiri-atum",
+  "name": "Niguiri de atum",
+  "priceCents": 2400,
+  "shortDescription": "6 unidades de atum sobre arroz.",
+  "sortOrder": 6
+ },
+ {
+  "category": "Niguiri",
+  "code": "0037",
+  "slug": "niguiri-anchova-defumada",
+  "name": "Niguiri de anchova defumada",
+  "priceCents": 3000,
+  "shortDescription": "6 unidades de anchova defumada sobre arroz.",
+  "image": "/cardapio/niguiri-barriga-salmao-02-1000.webp",
+  "sortOrder": 7
+ },
+ {
+  "category": "Gunkan",
+  "categorySort": 7,
+  "code": "0015",
+  "slug": "gunkan-salmao-tartar",
+  "name": "Gunkan de salmão com tartar de salmão",
+  "priceCents": 3200,
+  "shortDescription": "8 unidades com arroz e tartar de salmão.",
+  "sortOrder": 1,
+  "image": "/cardapio/menu-gunkan-salmao-1000.webp"
+ },
+ {
+  "category": "Gunkan",
+  "code": "0016",
+  "slug": "gunkan-camarao",
+  "name": "Gunkan de camarão",
+  "priceCents": 3000,
+  "shortDescription": "8 unidades de camarão com arroz.",
+  "sortOrder": 2
+ },
+ {
+  "category": "Jyo",
+  "categorySort": 8,
+  "code": "0018",
+  "slug": "jyo-salmao-cream-cheese",
+  "name": "Jyo de salmão com cream cheese",
+  "priceCents": 3000,
+  "shortDescription": "8 unidades sem arroz, salmão enrolado com cream cheese.",
+  "sortOrder": 1,
+  "image": "/cardapio/menu-jyo-salmao-1000.webp"
+ },
+ {
+  "category": "Jyo",
+  "code": "0019",
+  "slug": "jyo-salmao-cream-cheese-maracuja",
+  "name": "Jyo de salmão com cream cheese e calda de maracujá",
+  "priceCents": 3000,
+  "shortDescription": "8 unidades sem arroz, com calda de maracujá.",
+  "sortOrder": 2
+ },
+ {
+  "category": "Jyo",
+  "code": "0020",
+  "slug": "jyo-salmao-cream-cheese-geleia-pimenta",
+  "name": "Jyo de salmão com cream cheese e geleia de pimenta",
+  "priceCents": 2800,
+  "shortDescription": "8 unidades sem arroz, com geleia de pimenta.",
+  "sortOrder": 3
+ },
+ {
+  "category": "Jyo",
+  "code": "0021",
+  "slug": "jyo-salmao-cream-cheese-tartar",
+  "name": "Jyo de salmão com cream cheese e tartar de salmão",
+  "priceCents": 3200,
+  "shortDescription": "8 unidades sem arroz, finalizadas com tartar de salmão.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Jyo",
+  "code": "0022",
+  "slug": "jyo-salmao-queijo-macaricado",
+  "name": "Jyo de salmão maçaricado com queijo e geleia de pimenta",
+  "priceCents": 3500,
+  "shortDescription": "8 unidades sem arroz, com cream cheese, queijo maçaricado e geleia de pimenta.",
+  "sortOrder": 5
+ },
+ {
+  "category": "Jyo",
+  "code": "0023",
+  "slug": "jyo-salmao-camarao-empanado",
+  "name": "Jyo de salmão com camarão empanado",
+  "priceCents": 3500,
+  "shortDescription": "8 unidades com cream cheese, camarão empanado, molho tare, cebolinha e gergelim.",
+  "longDescription": "8 unidades sem arroz, salmão enrolado com cream cheese e camarão empanado, molho tare, cebolinha e gergelim triturado.",
+  "sortOrder": 6
+ },
+ {
+  "category": "Hot",
+  "categorySort": 9,
+  "code": "0040",
+  "slug": "hot-salmao-cream-cheese",
+  "name": "Hot de salmão com cream cheese",
+  "priceCents": 2500,
+  "shortDescription": "10 unidades empanadas de salmão com cream cheese.",
+  "featured": true,
+  "sortOrder": 1,
+  "image": "/cardapio/menu-hot-salmao-macaricado-1000.webp"
+ },
+ {
+  "category": "Hot",
+  "code": "0041",
+  "slug": "hot-kani-cream-cheese",
+  "name": "Hot de kani com cream cheese",
+  "priceCents": 1800,
+  "shortDescription": "10 unidades empanadas de kani com cream cheese.",
+  "sortOrder": 2
+ },
+ {
+  "category": "Hot",
+  "code": "0042",
+  "slug": "hot-banana-chocolate",
+  "name": "Hot de banana com chocolate",
+  "priceCents": 1800,
+  "shortDescription": "10 unidades — a sobremesa da casa.",
+  "sortOrder": 3,
+  "image": "/cardapio/menu-hot-doce-1000.webp"
+ },
+ {
+  "category": "Hot",
+  "code": "0043",
+  "slug": "hot-kani",
+  "name": "Hot de kani",
+  "priceCents": 2000,
+  "shortDescription": "10 unidades empanadas de kani.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Hot",
+  "code": "0044",
+  "slug": "hot-harumaki",
+  "name": "Hot harumaki",
+  "priceCents": 2800,
+  "shortDescription": "10 unidades de harumaki.",
+  "sortOrder": 5
+ },
+ {
+  "category": "Hot",
+  "code": "0045",
+  "slug": "hot-camarao",
+  "name": "Hot de camarão",
+  "priceCents": 2600,
+  "shortDescription": "10 unidades empanadas de camarão.",
+  "sortOrder": 6
+ },
+ {
+  "category": "Hot",
+  "code": "0046",
+  "slug": "hot-queijo-macaricado",
+  "name": "Hot de salmão com queijo maçaricado",
+  "priceCents": 2800,
+  "shortDescription": "10 unidades de salmão e cream cheese com queijo maçaricado e geleia de pimenta.",
+  "sortOrder": 7
+ },
+ {
+  "category": "Sashimi",
+  "categorySort": 10,
+  "code": "0029",
+  "slug": "sashimi-unidade",
+  "name": "Sashimi (unidade)",
+  "priceCents": 350,
+  "shortDescription": "Escolha entre salmão, tilápia, anchova defumada ou camarão.",
+  "longDescription": "Preço por unidade. Informe na observação do pedido qual peixe você quer: salmão, tilápia, anchova defumada ou camarão.",
+  "sortOrder": 1
+ },
+ {
+  "category": "Sashimi",
+  "code": "0030",
+  "slug": "sashimi-especial",
+  "name": "Sashimi especial (10 fatias)",
+  "priceCents": 3200,
+  "shortDescription": "Marinado no limão com pimenta sriracha, gengibre picado e gergelim moído.",
+  "sortOrder": 2,
+  "image": "/cardapio/menu-sashimi-variado-1000.webp"
+ },
+ {
+  "category": "Sashimi",
+  "code": "0024",
+  "slug": "carpaccio-10-unidades",
+  "name": "Carpaccio de salmão ou tilápia (10 unidades)",
+  "priceCents": 2500,
+  "shortDescription": "Fatias marinadas no limão, azeite, pimenta e pérolas de shoyu.",
+  "longDescription": "Fatias marinadas no limão, azeite, pimenta, pérolas de shoyu, cebolinha, raspa de limão siciliano, flor de sal e azeite trufado.",
+  "sortOrder": 3
+ },
+ {
+  "category": "Sashimi",
+  "code": "0025",
+  "slug": "carpaccio-20-unidades",
+  "name": "Carpaccio de salmão ou tilápia (20 unidades)",
+  "priceCents": 4000,
+  "shortDescription": "Fatias marinadas no limão, azeite, pimenta e pérolas de shoyu.",
+  "longDescription": "Fatias marinadas no limão, azeite, pimenta, pérolas de shoyu, cebolinha, raspa de limão siciliano, flor de sal e azeite trufado.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Sashimi",
+  "code": "0026",
+  "slug": "tataki-salmao",
+  "name": "Tataki de salmão (250g)",
+  "priceCents": 3500,
+  "shortDescription": "Cubos marinados no limão, shoyu, azeite, cebola roxa e gergelim moído.",
+  "longDescription": "Peixe cortado em cubos e marinado no limão, shoyu, azeite, cebola roxa, gergelim moído e cebolinha.",
+  "sortOrder": 5
+ },
+ {
+  "category": "Ceviche",
+  "categorySort": 11,
+  "code": "0027",
+  "slug": "ceviche-tilapia",
+  "name": "Ceviche de tilápia (200g)",
+  "priceCents": 2500,
+  "shortDescription": "Marinado no limão com leite de coco, pimenta de cheiro e coentro.",
+  "longDescription": "Peixe cortado em cubos, marinado no limão, cebola roxa, pimenta de cheiro, pimenta dedo de moça, azeite, leite de coco e coentro.",
+  "image": "/cardapio/ceviche-tilapia-leite-de-coco-01-1000.webp",
+  "featured": true,
+  "sortOrder": 1
+ },
+ {
+  "category": "Ceviche",
+  "code": "0028",
+  "slug": "ceviche-salmao",
+  "name": "Ceviche de salmão",
+  "priceCents": 3500,
+  "shortDescription": "A mesma marinada, agora com salmão.",
+  "longDescription": "Peixe cortado em cubos, marinado no limão, cebola roxa, pimenta de cheiro, pimenta dedo de moça, azeite, leite de coco e coentro.",
+  "image": "/cardapio/ceviche-tilapia-leite-de-coco-02-1000.webp",
+  "sortOrder": 2
+ },
+ {
+  "category": "Cardápio Chinês",
+  "categorySort": 12,
+  "code": "0090",
+  "slug": "teppanyaki-salmao",
+  "name": "Teppanyaki de salmão",
+  "priceCents": 4000,
+  "shortDescription": "Com arroz colorido e legumes salteados.",
+  "sortOrder": 1
+ },
+ {
+  "category": "Cardápio Chinês",
+  "code": "0102",
+  "slug": "frango-xadrez",
+  "name": "Frango Xadrez",
+  "priceCents": 3490,
+  "shortDescription": "Acompanha gohan ou arroz colorido.",
+  "sortOrder": 2
+ },
+ {
+  "category": "Cardápio Chinês",
+  "code": "0103",
+  "slug": "file-acebolado",
+  "name": "Filé Acebolado",
+  "priceCents": 3490,
+  "shortDescription": "Acompanha gohan ou arroz colorido.",
+  "sortOrder": 3
+ },
+ {
+  "category": "Cardápio Chinês",
+  "code": "0104",
+  "slug": "poker-especial-da-casa",
+  "name": "Poker Especial da Casa",
+  "priceCents": 4190,
+  "shortDescription": "O especial do Sushi Full.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Cardápio Chinês",
+  "code": "0105",
+  "slug": "camarao-alho-e-oleo",
+  "name": "Camarão ao Alho e Óleo (200g)",
+  "priceCents": 4990,
+  "shortDescription": "Camarões salteados no alho e óleo.",
+  "sortOrder": 5
+ },
+ {
+  "category": "Cardápio Chinês",
+  "code": "0106",
+  "slug": "yakimeshi-carne",
+  "name": "Yakimeshi de carne",
+  "priceCents": 2990,
+  "shortDescription": "Arroz frito com carne.",
+  "sortOrder": 6
+ },
+ {
+  "category": "Cardápio Chinês",
+  "code": "0106",
+  "slug": "yakimeshi-frango",
+  "name": "Yakimeshi de frango",
+  "priceCents": 2990,
+  "shortDescription": "Arroz frito com frango.",
+  "sortOrder": 7
+ },
+ {
+  "category": "Cardápio Chinês",
+  "code": "0107",
+  "slug": "yakimeshi-camarao",
+  "name": "Yakimeshi de camarão",
+  "priceCents": 3490,
+  "shortDescription": "Arroz frito com camarão.",
+  "sortOrder": 8
+ },
+ {
+  "category": "Cardápio Chinês",
+  "code": "0106",
+  "slug": "yakimeshi-misto",
+  "name": "Yakimeshi misto",
+  "priceCents": 2990,
+  "shortDescription": "Arroz frito misto.",
+  "sortOrder": 9
+ },
+ {
+  "category": "Porções",
+  "categorySort": 13,
+  "code": "0093",
+  "slug": "frango-empanado",
+  "name": "Frango empanado (200g)",
+  "priceCents": 3000,
+  "shortDescription": "Porção de frango empanado crocante.",
+  "sortOrder": 1
+ },
+ {
+  "category": "Porções",
+  "code": "0095",
+  "slug": "shimeji",
+  "name": "Shimeji (200g)",
+  "priceCents": 2700,
+  "shortDescription": "Cogumelo shimeji salteado na manteiga e shoyu.",
+  "sortOrder": 2,
+  "image": "/cardapio/menu-shimeji-1000.webp"
+ },
+ {
+  "category": "Porções",
+  "code": "0097",
+  "slug": "cebola-empanada-queijo",
+  "name": "Cebola empanada com queijo (6 unidades)",
+  "priceCents": 2700,
+  "shortDescription": "6 unidades de cebola empanada recheada com queijo.",
+  "sortOrder": 3
+ },
+ {
+  "category": "Porções",
+  "code": "0101",
+  "slug": "anel-de-lula-empanado",
+  "name": "Anel de lula empanado (10 unidades)",
+  "priceCents": 3000,
+  "shortDescription": "10 anéis de lula empanados.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Porções",
+  "code": "0108",
+  "slug": "caraague",
+  "name": "Caraague (200g)",
+  "priceCents": 2700,
+  "shortDescription": "Frango frito estilo japonês.",
+  "sortOrder": 5
+ },
+ {
+  "category": "Porções",
+  "code": "0108",
+  "slug": "frango-marinado-crocante",
+  "name": "Frango marinado crocante",
+  "priceCents": 2990,
+  "shortDescription": "Frango marinado e frito até ficar crocante.",
+  "sortOrder": 6
+ },
+ {
+  "category": "Porções",
+  "code": "2003",
+  "slug": "batata-frita",
+  "name": "Batata frita (400g)",
+  "priceCents": 2990,
+  "shortDescription": "Porção generosa de batata frita.",
+  "sortOrder": 7
+ },
+ {
+  "category": "Bebidas",
+  "categorySort": 14,
+  "code": "0110",
+  "slug": "refrigerante-lata",
+  "name": "Refrigerante lata",
+  "priceCents": 800,
+  "shortDescription": "Fanta laranja, Fanta uva, Sprite, Coca-Cola, Coca Zero, Guaraná ou Guaraná Zero.",
+  "longDescription": "Informe o sabor na observação do pedido: Fanta laranja, Fanta uva, Sprite, Coca-Cola, Coca-Cola Zero, Guaraná Antarctica ou Guaraná Zero.",
+  "sortOrder": 1,
+  "image": "/cardapio/menu-refrigerante-1000.webp"
+ },
+ {
+  "category": "Bebidas",
+  "code": "0111",
+  "slug": "h2o",
+  "name": "H2OH!",
+  "priceCents": 990,
+  "shortDescription": "Água saborizada gelada.",
+  "sortOrder": 2
+ },
+ {
+  "category": "Bebidas",
+  "code": "0112",
+  "slug": "agua-sem-gas",
+  "name": "Água sem gás",
+  "priceCents": 500,
+  "shortDescription": "Garrafa de água mineral sem gás.",
+  "sortOrder": 3
+ },
+ {
+  "category": "Bebidas",
+  "code": "0113",
+  "slug": "agua-com-gas",
+  "name": "Água com gás",
+  "priceCents": 600,
+  "shortDescription": "Garrafa de água mineral com gás.",
+  "sortOrder": 4
+ },
+ {
+  "category": "Bebidas",
+  "code": "0114",
+  "slug": "sucos",
+  "name": "Sucos naturais",
+  "priceCents": 1000,
+  "shortDescription": "Laranja, limão ou abacaxi com hortelã.",
+  "longDescription": "Informe o sabor na observação do pedido: laranja, limão ou abacaxi com hortelã.",
+  "sortOrder": 5
+ },
+ {
+  "category": "Bebidas",
+  "code": "0117",
+  "slug": "corona-long-neck",
+  "name": "Corona Long Neck",
+  "priceCents": 1490,
+  "shortDescription": "Cerveja Corona Extra long neck gelada.",
+  "sortOrder": 6
+ },
+ {
+  "category": "Bebidas",
+  "code": "0118",
+  "slug": "heineken-long-neck",
+  "name": "Heineken Long Neck",
+  "priceCents": 1199,
+  "shortDescription": "Cerveja Heineken long neck gelada.",
+  "sortOrder": 7
+ },
+ {
+  "category": "Bebidas",
+  "code": "0119",
+  "slug": "heineken-long-neck-zero",
+  "name": "Heineken Long Neck Zero",
+  "priceCents": 1199,
+  "shortDescription": "Heineken sem álcool, long neck gelada.",
+  "sortOrder": 8
+ }
+]

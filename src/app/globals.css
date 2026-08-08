@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/*
+ * Tokens da marca SushiFull.
+ * Nomear como --color-* dentro de @theme faz o Tailwind v4 gerar as utilities
+ * automaticamente: bg-brand, text-brand, border-brand/20, ring-brand, etc.
+ */
+@theme {
+  /* Marca — vermelho/coral do logotipo */
+  --color-brand: #f04e3c;
+  --color-brand-strong: #d53e2d;
+  --color-brand-soft: #ff6b5a;
+  --color-accent: #ff8a3d;
+
+  /* Superfícies (o site é dark sempre) */
+  --color-ink: #000000;
+  --color-surface: #0d0d0d;
+  --color-surface-2: #171717;
+  --color-surface-3: #202020;
+  --color-line: #262626;
+
+  /* Texto */
+  --color-cream: #fff6f2;
+  --color-muted: #a1a1aa;
+  --color-faint: #71717a;
+
+  /* Sistêmicas */
+  --color-whats: #25d366;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-success: #22c55e;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), var(--font-inter), ui-sans-serif, sans-serif;
+
+  --radius-card: 1.25rem;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Tipografia de títulos usa a display por padrão */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--color-brand);
+    color: #fff;
+  }
+
+  /* Foco visível e consistente — acessibilidade */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+/* Esconde a scrollbar em carrosséis horizontais mantendo o scroll */
+@utility scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Placeholder de imagem enquanto carrega */
+@utility shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--color-surface-2) 30%,
+    var(--color-surface-3) 50%,
+    var(--color-surface-2) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
