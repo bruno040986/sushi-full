@@ -16,7 +16,8 @@
     "media:images": "node scripts/optimize-images.mjs",
     "media:videos": "node scripts/optimize-videos.mjs",
     "media:icons": "node scripts/make-icons.mjs",
-    "media:all": "npm run media:images && npm run media:videos && npm run media:icons",
+    "media:all": "npm run media:images && npm run media:videos && npm run media:icons && npm run media:og",
+    "media:og": "node scripts/make-og-image.mjs",
     "media:pdf-photos": "node scripts/import-pdf-photos.mjs"
   },
   "prisma": {
