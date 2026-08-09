@@ -78,8 +78,13 @@ async function seedSettings() {
       storeName: "SushiFull",
       tagline: "Sabor que completa",
       aboutTitle: "Sobre o SushiFull",
-      aboutText:
-        "Sushi fresco, feito na hora, com ingredientes selecionados. Rodízio todos os dias. Combos para dividir, temakis, niguiris, ceviches, cardápio chinês completo e muito mais. Tudo em Valparaíso de Goiás.",
+      // Sem "rodízio todos os dias": a casa fecha na segunda, e a grade de
+      // horários semeada logo abaixo diz isso. O texto não pode contradizê-la.
+      aboutText: [
+        "Tem sushi de todo dia e tem sushi que vira programa. O nosso é o segundo.",
+        "Salmão maçaricado, niguiri trufado com flor de sal e limão siciliano, ceviche de tilápia com leite de coco, combos de 14 a 100 peças para dividir na mesa. Tem rodízio para quem quer provar de tudo, e um cardápio chinês completo para variar.",
+        "Sabor que completa é o que a gente persegue em cada peça que sai da cozinha. Estamos no Parque Esplanada III, em Valparaíso de Goiás, de terça a domingo, das 18h às 23h.",
+      ].join("\n\n"),
 
       whatsappNumber: "5561993292359",
       whatsappDisplay: "(61) 99329-2359",
