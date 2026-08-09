@@ -5,6 +5,7 @@
  * filtram `active` — nenhuma delas pode vazar produto ou categoria desativados,
  * que era o defeito do projeto anterior.
  */
+import { cache } from "react";
 import { prisma } from "@/lib/prisma";
 import { getStoreStatus, type OpeningHourDTO } from "@/lib/hours";
 
@@ -34,18 +35,28 @@ export async function getAnalyticsConfig() {
   }
 }
 
-/** Configurações da loja. O upsert garante que nunca retorna null. */
-export async function getSettings() {
+/**
+ * Configurações da loja.
+ *
+ * Lê primeiro e só cria se realmente não existir. O `upsert` direto que havia
+ * aqui abria uma transação de escrita a cada leitura — e como esta função é
+ * chamada quatro vezes por página (metadata, analytics, layout e carrinho),
+ * eram quatro escritas por visita para buscar um registro que nunca muda.
+ */
+export const getSettings = cache(async () => {
+  const settings = await prisma.storeSettings.findUnique({ where: { id: "singleton" } });
+  if (settings) return settings;
+
   return prisma.storeSettings.upsert({
     where: { id: "singleton" },
     update: {},
     create: { id: "singleton" },
   });
-}
+});
 
 export type Settings = Awaited<ReturnType<typeof getSettings>>;
 
-export async function getOpeningHours(): Promise<OpeningHourDTO[]> {
+export const getOpeningHours = cache(async (): Promise<OpeningHourDTO[]> => {
   const hours = await prisma.openingHour.findMany({ orderBy: { weekday: "asc" } });
   return hours.map(({ weekday, closed, opensAtMin, closesAtMin }) => ({
     weekday,
@@ -53,18 +64,18 @@ export async function getOpeningHours(): Promise<OpeningHourDTO[]> {
     opensAtMin,
     closesAtMin,
   }));
-}
+});
 
 /** Cidades atendidas, com a padrão em primeiro lugar. */
-export async function getServiceCities() {
+export const getServiceCities = cache(async () => {
   return prisma.serviceCity.findMany({
     where: { active: true },
     orderBy: [{ isDefault: "desc" }, { sortOrder: "asc" }, { name: "asc" }],
     select: { id: true, name: true, state: true, isDefault: true },
   });
-}
+});
 
-export async function getActiveDeliveryZones() {
+export const getActiveDeliveryZones = cache(async () => {
   return prisma.deliveryZone.findMany({
     where: { active: true, city: { active: true } },
     orderBy: [{ city: { sortOrder: "asc" } }, { sortOrder: "asc" }, { name: "asc" }],
@@ -78,23 +89,23 @@ export async function getActiveDeliveryZones() {
       freeDeliveryThresholdCents: true,
     },
   });
-}
+});
 
-export async function getActivePaymentMethods() {
+export const getActivePaymentMethods = cache(async () => {
   return prisma.paymentMethod.findMany({
     where: { active: true },
     orderBy: [{ sortOrder: "asc" }, { name: "asc" }],
     select: { id: true, name: true, isCash: true },
   });
-}
+});
 
-export async function getActiveReels() {
+export const getActiveReels = cache(async () => {
   return prisma.reel.findMany({
     where: { active: true },
     orderBy: { sortOrder: "asc" },
     select: { id: true, title: true, videoUrl: true, posterUrl: true },
   });
-}
+});
 
 const PRODUCT_FIELDS = {
   id: true,
@@ -126,7 +137,7 @@ export type MenuCategory = {
 };
 
 /** Catálogo público: só categorias e produtos ativos, já agrupados. */
-export async function getMenu(): Promise<MenuCategory[]> {
+export const getMenu = cache(async (): Promise<MenuCategory[]> => {
   const categories = await prisma.category.findMany({
     where: { active: true, products: { some: { active: true } } },
     orderBy: [{ sortOrder: "asc" }, { name: "asc" }],
@@ -151,10 +162,10 @@ export async function getMenu(): Promise<MenuCategory[]> {
       imageUrl: product.imageUrl ?? imageUrl,
     })),
   }));
-}
+});
 
 /** Destaques do carrossel da home. */
-export async function getFeaturedProducts(limit = 12): Promise<MenuProduct[]> {
+export const getFeaturedProducts = cache(async (limit = 12): Promise<MenuProduct[]> => {
   const products = await prisma.product.findMany({
     where: { active: true, featured: true, category: { active: true } },
     orderBy: [{ sortOrder: "asc" }, { name: "asc" }],
@@ -166,7 +177,7 @@ export async function getFeaturedProducts(limit = 12): Promise<MenuProduct[]> {
     ...product,
     imageUrl: product.imageUrl ?? category.imageUrl,
   }));
-}
+});
 
 /**
  * Tudo que o carrinho precisa numa chamada só. O CartDrawer não pode fazer
